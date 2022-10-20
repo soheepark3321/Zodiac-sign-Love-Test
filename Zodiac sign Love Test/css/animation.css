@@ -1,0 +1,32 @@
+/* 천천히 사라지기 */
+@keyframes fadeIn{ /* 시작 될 때 */
+    from { opacity : 0;} /* 투명도 */
+    to { opacity: 1;}
+}
+
+@keyframes fadeOut{
+    from { opacity : 1;} /* 투명도 */
+    to { opacity: 0;}
+}
+
+/* crome에서는 webkit이라는 animation이 적용되고 있기 떄문에 하나 더 만들어줌 (크롬용으로) */
+
+@-webkit-keyframes fadeIn{ /* 시작 될 때 */
+    from { opacity : 0;} /* 투명도 */
+    to { opacity: 1;}
+}
+
+@-webkit-keyframes fadeOut{
+    from { opacity : 1;} /* 투명도 */
+    to { opacity: 0;}
+}
+
+.fadeIn{ /*버튼들에게 애니메이션 부여 (answer)*/
+    animation: fadeIn;
+    animation-duration: 0.5s;
+}
+
+.fadeOut{
+    animation: fadeOut;
+    animation-duration: 0.5s;
+}

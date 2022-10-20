@@ -1,0 +1,54 @@
+#qna {
+    display: none;
+}
+
+.qBox {
+    background-color: whitesmoke;
+    text-align: center;
+    border-radius: 20px;
+    font-size: 24px;
+    width: 80%;
+    border-style: inset;
+    border-width: thick;
+}
+
+.answerList {
+    background-color: whitesmoke;
+    border-radius: 20px;
+    display: block;
+    width: 80%;
+    border: 0px;
+    font-size: 20px;
+}
+
+.answerList:hover,
+.answerList:focus {
+    /*버튼이 위에 올려졌을 때, 버튼이 클릭되었을 때*/
+    background-color: pink;
+    color: whitesmoke;
+}
+
+.status {
+    height: 10px;
+    width: 80%;
+    background-color: whitesmoke;
+    border-radius: 25px;
+}
+
+.statusBar {
+    height: 100%;
+    border-radius: 25px;
+    /* colorzilla.com */
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#febbbb+0,fe9090+35,ff5c5c+69 */
+    background: #febbbb;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #febbbb 0%, #fe9090 35%, #ff5c5c 69%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #febbbb 0%, #fe9090 35%, #ff5c5c 69%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #febbbb 0%, #fe9090 35%, #ff5c5c 69%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#febbbb', endColorstr='#ff5c5c', GradientType=0);
+    /* IE6-9 */
+
+}

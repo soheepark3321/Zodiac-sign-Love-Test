@@ -1,0 +1,8 @@
+body {
+    background-color: pink;
+}
+
+* {
+    /* '*' : 모든 것에 해당 */
+    font-family: 'Do Hyeon', sans-serif;
+}

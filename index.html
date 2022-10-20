@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<!--
+        lang = 'ko' : 스크린리더의 기본 문자셋 설정, 요소 내 수정 불가/수정 가능한 txt가 사용해야 하는 언어 정의
+        dir = 'ltr' : ltr 왼쪽 -> 오른쪽 (한국어나 영어에 사용)
+        dir = 'auto' : 사용자 에이전트가 결정함 (기본적인 알고리즘 문자 분석)
+        -> 한국어나 영어를 사용하므로 굳이 dir = 'ltr'로 선언해줄 필요는 없음
+    -->
+
+<head>
+    <meta charset="UTF-8">
+    <!--유니코드를 위한 가변 길이 문자 인코딩 방식 나타냄-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--device와 pc 반응형 웹 제작 위함 / scale=1 : 비율은 1이라는 뜻-->
+
+    <meta name="author" content="soheepark">
+    <meta name="keywords" content="십이간지 연애유형">
+    <meta name="description" content="십이간지 연애유형">
+
+    <!--sns share-->
+    <meta property="og:url" content="https://12ganzilovetype.netlify.app" />
+    <meta property="og:title" content="십이간지 연애유형">
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="img/share.png" />
+    <!--카톡에 공유하면 링크 밑으로 그림 나오는거-->
+    <meta property="og:description" content="십이간지로 알아보는 연애유형" />
+
+    <link rel="shortcut icon" href="./img/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="./img/favicon.ico">
+    <!--애플 기기를 위해-->
+
+    <title>십이간지 연애 유형</title>
+    <!-- CSS only / Bootstrap(framework) : css 사용-->
+    <!--Bootstrap : 모바일과 PC를 위한 UI를 위해 반응형 웹사이트 제작 위함-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/default.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/qna.css">
+    <link rel="stylesheet" href="./css/animation.css">
+    <link rel="stylesheet" href="./css/result.css">
+
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script>
+        Kakao.init('bd8a332399fe6ee21bc947ce61c32a04');
+        Kakao.isInitialized();
+    </script>
+
+</head>
+
+<body>
+    <div class="container">
+        <!--Bootstrap의 grid 이용 위해, 해당 클래스가 필요함 (grid : 반응형)-->
+        <section id="main" class="mx-auto my-5 py-5 px-3">
+            <!--py : padding y축 (top & bottom)-->
+            <h1>십이간지로 알아보는<br>"연애" 유형</h1>
+            <div class="col-lg-6 col-md-8 col-sm-10 col-12 mx-auto">
+                <!--container 태그를 12등분한게 col-6이니까 절반을 div태그에 적용되고, 이미지는 fluid 속성으로 인해 그 크기를 항상 따라가게 될 것임.-->
+                <img src="./img/main.png" alt="mainImage" class="img-fluid">
+            </div>
+            <p>
+                나만의 MBTI 사이트입니다! <br>
+                아래 시작하기 버튼을 눌러 시작해 주십시오.
+            </p>
+            <button type="button" class="btn btn-danger mt-3" onclick="js:begin()">시작하기</button>
+            <!--button type 명시 필수
+            -> IE(익스플로러)의 경우 기본 타입 button, 
+               타 브라우저 경우 기본 타입 submit이기 때문-->
+            <!--Bootstrap css 활용-->
+        </section>
+        <section id="qna">
+            <div class="status mx-auto mt-4">
+                <div class="statusBar"></div>
+            </div>
+            <div class="qBox my-5 py-3 mx-auto"></div>
+            <!--mx-auto : 왼쪽으로 치우쳐져 있는 버튼들 center로 자동 정렬-->
+            <div class="answerBox"></div>
+        </section>
+
+        <section id="result" class="mx-auto my-5 py-5 px-3">
+            <h1>당신의 결과는?</h1>
+            <div class="resultname"></div>
+            <div id="resultImg" class="my-3 col-lg-6 col-md-8 col-sm-10 col-12 mx-auto">
+                <!--container 태그를 12등분한게 col-6이니까 절반을 div태그에 적용되고, 이미지는 fluid 속성으로 인해 그 크기를 항상 따라가게 될 것임.-->
+            </div>
+            <div class="resultDesc"></div>
+            <button type="button" class="kakao mt-5 py-2 px-3" onclick="js:setShare()">공유하기</button>
+        </section>
+        <script src="./js/data.js" charset="utf-8"></script>
+        <!--start.js파일이 import된 위치보다 더 앞에 적어주기-->
+        <script src="./js/start.js" charset="utf-8"></script>
+        <!--js태그는 body 끝나는 부분에 넣기 (자바스크립트 파일을 head에 쓰게 되면 브라우저가 js 먼저 읽느라 로딩 시간 길어짐)-->
+        <script src="./js/share.js" charset="utf-8"></script>
+    </div>
+</body>
+
+</html>

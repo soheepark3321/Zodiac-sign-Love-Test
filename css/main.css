@@ -1,0 +1,10 @@
+#main {
+    background-color: whitesmoke;
+    width: 80%;
+    text-align: center;
+    border-radius: 20px; /*main 부분 가장자리 둥글게*/
+}
+
+p {
+    font-size: 20px;
+}
